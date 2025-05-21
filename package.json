@@ -1,0 +1,19 @@
+{
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
+
+{
+  "name": "animal-encyclopedia",
+  "version": "0.0.1",
+  "homepage": "https://alexxodavid.github.io/animal-encyclopedia",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  …
+}
