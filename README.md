@@ -1,0 +1,1 @@
+I built an Animal Encyclopedia app with Vite that fetches data from an API and displays it in a clean, interactive interface. My modular code, async data loading, and simple HTML/CSS styling make it easy to explore and learn about different animals.
