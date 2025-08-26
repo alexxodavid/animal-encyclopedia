@@ -1,0 +1,183 @@
+:root {
+  --bg-light: #eef6e9;
+  --card-bg: #ffffff;
+  --card-border: #c3d6c1;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --accent: #5a8a39;
+  --accent-dark: #4d7a32;
+  --text-dark: #2f3e2e;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: var(--bg-light);
+}
+
+.animal-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.animal-card {
+  position: relative;
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px var(--shadow);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.animal-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px var(--shadow);
+}
+
+.animal-card::after {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 1.5rem;
+  opacity: 0.3;
+}
+
+/*
+ * Emoji positioned on the card. The absolute positioning ensures
+ * the emoji appears over the image but within the card bounds. A
+ * slightly transparent opacity softens the visual impact.
+ */
+.animal-card__emoji {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 2rem;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/*
+ * Fun fact styling. The italic text differentiates the fact from
+ * other pieces of information. Additional top margin creates
+ * breathing room between sections.
+ */
+.animal-card__fact {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+/*
+ * Emoji positioned on the card. The absolute positioning ensures
+ * the emoji appears over the image but within the card bounds. A
+ * slightly transparent opacity softens the visual impact.
+ */
+.animal-card__emoji {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 2rem;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/*
+ * Fun fact styling. The italic text differentiates the fact from
+ * other pieces of information. Additional top margin creates
+ * breathing room between sections.
+ */
+.animal-card__fact {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.animal-card__img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.animal-card__info {
+  padding: 1rem;
+}
+
+.animal-card__name {
+  margin: 0 0 0.5rem;
+  font-size: 1.4rem;
+  color: var(--accent);
+}
+
+.animal-card__info p {
+  margin: 0.25rem 0;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+}
+
+.load-more-btn {
+  display: block;
+  margin: 2rem auto;
+  padding: 0.75rem 2rem;
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 2px 6px var(--shadow);
+  transition: background 0.3s ease;
+}
+
+.load-more-btn:hover {
+  background: var(--accent-dark);
+}
+
+.load-more-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  text-align: center;
+  color: #c0392b;
+  margin-top: 1rem;
+}
+
+/*
+ * Confetti effect. When triggered a container fills the viewport with
+ * absolutely positioned pieces that fall from the top downwards. Each
+ * piece is a small circle that animates its vertical position and
+ * rotation while gradually fading out. The container itself is
+ * pointer‑events disabled to avoid blocking interaction.
+ */
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  opacity: 0.9;
+  animation-name: confetti-fall;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes confetti-fall {
+  to {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+}

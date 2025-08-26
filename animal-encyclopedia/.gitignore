@@ -1,0 +1,24 @@
+# Node dependencies and build artifacts
+node_modules/
+dist/
+build/
+
+# Environment variables and secrets
+.env
+.env.local
+.env.*.local
+
+# Logs and OS cruft
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+Thumbs.db
+
+# Editor/project metadata
+.vscode/
+.idea/
+*.suo
+*.njsproj
+*.sln
+
